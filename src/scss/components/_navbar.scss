@@ -1,0 +1,82 @@
+// Import BS4 navbar styles
+@import '~bootstrap/scss/navbar';
+
+// ----------------------------------------------
+
+.navbar {
+  background: transparent;
+  @include trans;
+  padding: 1rem;
+  position: fixed;
+
+  @include respond-below(lg) {
+    background: $black;
+  }
+
+  .navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: $fw-bold;
+    letter-spacing: 1.15px;
+    color: $secondary;
+    font-size: 2rem;
+
+    span {
+      color: $primary;
+    }
+  }
+
+  .nav-item {
+    .nav-link {
+      font-size: $fs-nav-sm;
+      color: $secondary;
+      padding-left: 1.5rem !important;
+      padding-right: 1.5rem !important;
+      @include trans;
+
+      &:hover,
+      &.active {
+        color: $primary;
+      }
+    }
+  }
+}
+
+@include respond-below(md) {
+  .navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.1rem solid $light;
+
+    .nav-item {
+      .nav-link {
+        padding: 1rem;
+        font-size: $fs-nav-md;
+      }
+    }
+  }
+
+  .navbar-collapse {
+    .nav-item {
+      position: relative;
+      padding: 2rem;
+      text-align: center;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 20rem;
+        height: 0.2rem;
+        background: rgba($color: #ffffff, $alpha: 0.1);
+        position: absolute;
+        bottom: 0;
+        left: calc(50% - 10rem);
+      }
+
+      &:last-of-type {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}

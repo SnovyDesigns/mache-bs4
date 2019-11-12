@@ -1,0 +1,45 @@
+// Import BS4 navbar styles
+@import '~bootstrap/scss/buttons';
+
+// ----------------------------------------------
+
+.btn {
+  font-size: $fs-button-sm;
+  padding: 1.5rem 4.5rem;
+  text-transform: uppercase;
+  @include brr(2.5);
+  font-weight: $fw-bold;
+  letter-spacing: 0.38px;
+  overflow: hidden;
+  position: relative;
+
+  @include respond-below(sm) {
+    font-size: $fs-button-md;
+  }
+}
+
+.btn-primary {
+  background: transparent;
+  border-width: 2px;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    display: block;
+    @include size(0, 100%);
+    background: $primary;
+    @include absolute(top 0 left 50% right 50%);
+    z-index: -1;
+    transform: skew(25deg) translateX(-50%);
+    @include trans(0.4);
+  }
+
+  &:hover {
+    background: transparent;
+    border-color: $primary;
+
+    &::before {
+      width: 120%;
+    }
+  }
+}

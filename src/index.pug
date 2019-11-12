@@ -1,8 +1,26 @@
+//- PUG includes
+include ./includes/main
+
+//- -----------------------------------
+
 doctype html
 html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title 
-    meta(name="description", content="")
+    title Mache
+    meta(name="description", content="Template with clean fonts and elegant design. Perfect for business, portfolio and blog sites.")
+  body(data-spy="scroll" data-target="#main-nav")
+    header#home.top
+      +nav(["home", "about-us", "our-services", "prices", "contact"])
+      .container.h-100            
+        .row.h-100
+          .col.align-self-center.text-center.u-text-white 
+            h1.heading-primary.top__heading
+              strong Mache 
+              | Modern RWD Template
+            p.prime-text.top__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, eos.
+              br
+              | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet natus fugit facere.
+            button.btn.btn-primary Show more

@@ -1,0 +1,14 @@
+mixin nav(links)
+  nav#main-nav.navbar.navbar-expand-md.fixed-top
+    .container
+      a.navbar-brand(href="index.html")
+        span /// 
+        | Mache
+      a.navbar-toggler(data-target="#navbarCollapse" data-toggle="collapse")
+        +svg-menu
+      #navbarCollapse.collapse.navbar-collapse
+        ul.navbar-nav.ml-auto
+          for link, index in links
+            li.nav-item
+              - const upperName = require("./utils/upperName.js");
+                a.nav-link(href=`#${link}`)= `${upperName(link)}`

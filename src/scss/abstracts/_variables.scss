@@ -1,15 +1,42 @@
 // ***** COLORS *****
+$primary: #ed145b;
+
+$secondary: #ffffff;
+$light: #f4f4f4;
+$dark: #5a5a5a;
+$black: #171717;
+
+$selection: #f03070;
+
+// ----------------------------------------------
+
+// ***** GRADIENTS *****
+$gradient: linear-gradient(270deg, #596164 1.32%, #868f96 99.01%);
 
 // ----------------------------------------------
 
 // ***** FONT WEIGHTS *****
-$font-weight-thin: 100;
-$font-weight-light: 300;
-$font-weight-regular: 400;
-$font-weight-bold: 700;
-$font-weight-black: 900;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-bold: 700;
+$fw-black: 900;
 
 // ----------------------------------------------
 
 // ***** FONT SIZES *****
-$font-size-base: 1.6rem;
+$fs-nav-md: 1.8rem;
+$fs-nav-sm: 1.6rem;
+
+$fs-heading-primary-lg: 4.2rem;
+$fs-heading-primary-md: 3.4rem;
+$fs-heading-primary-sm: 3rem;
+
+$fs-text-lg: 2.2rem;
+$fs-text-md: 2rem;
+$fs-text-sm: 1.8rem;
+
+$fs-paragraph-md: 1.8rem;
+$fs-paragraph-sm: 1.5rem;
+
+$fs-button-md: 1.7rem;
+$fs-button-sm: 1.5rem;

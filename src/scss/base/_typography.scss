@@ -1,2 +1,46 @@
+// *** FONTS IMPORT ***
+
+// BASE FONT - Open Sans
+// LOGO FONT - Montserrat
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,700,900|Montserrat:700');
+
+// ---------------------------------------------------------
+
 body {
+  font-family: 'Lato', sans-serif;
+  font-weight: $fw-regular;
+}
+
+strong {
+  font-weight: $fw-black;
+}
+
+.heading-primary {
+  font-size: $fs-heading-primary-lg;
+  font-weight: $fw-light;
+  text-transform: uppercase;
+  letter-spacing: 1.15px;
+
+  @include respond-below(md) {
+    font-size: $fs-heading-primary-md;
+  }
+
+  @include respond-below(sm) {
+    font-size: $fs-heading-primary-sm;
+  }
+}
+
+.prime-text {
+  font-size: $fs-text-lg;
+  font-weight: $fw-light;
+  letter-spacing: 0.55px;
+  line-height: 1.68;
+
+  @include respond-below(xl) {
+    font-size: $fs-text-md;
+  }
+
+  @include respond-below(sm) {
+    font-size: $fs-text-sm;
+  }
 }

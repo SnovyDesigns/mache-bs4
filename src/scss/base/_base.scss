@@ -18,6 +18,9 @@ html {
 
 body {
   box-sizing: border-box;
+  color: $dark;
+  overflow-x: hidden;
+  position: relative;
 }
 
 ul {
@@ -35,6 +38,6 @@ img {
 }
 
 ::selection {
-  background-color: blue;
+  background-color: $selection;
   color: white;
 }

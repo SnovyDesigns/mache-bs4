@@ -1,0 +1,30 @@
+.top {
+  height: 80rem;
+  background: $gradient, iurl('top_bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: multiply;
+
+  @include respond-below(lg) {
+    height: 72rem;
+  }
+
+  @include respond-below(md) {
+    height: 65rem;
+    margin-top: 6.5rem;
+  }
+
+  &__heading {
+    &::after {
+      content: '';
+      display: block;
+      @include size(20rem, 0.2rem);
+      background: $primary;
+      margin: 3rem auto 5rem;
+    }
+  }
+
+  &__text {
+    margin-bottom: 6.6rem;
+  }
+}
