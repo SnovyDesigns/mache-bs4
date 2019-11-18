@@ -1,0 +1,37 @@
+.about {
+  padding: 7.5rem 0 7rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    @include size(100%, 5vh);
+    background: $primary;
+    @include absolute(top 0 left 0);
+    clip-path: polygon(0 0, 100% 0, 100% 25%, 0 100%);
+  }
+
+  &__heading {
+    width: 50%;
+
+    @include respond-below(lg) {
+      width: 100%;
+    }
+  }
+
+  &__svg-wrapper {
+    position: relative;
+  }
+
+  &__svg {
+    width: 110%;
+    @include absolute(top -87% left 0);
+
+    @include respond-below(lg) {
+      @include relative(top 0 left 50% right 50%);
+      transform: translateX(-50%);
+      width: 75%;
+      margin-bottom: 3rem;
+    }
+  }
+}

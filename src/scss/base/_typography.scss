@@ -30,6 +30,37 @@ strong {
   }
 }
 
+.heading-secondary {
+  font-size: $fs-heading-secondary-lg;
+  font-weight: $fw-light;
+  font-style: italic;
+  letter-spacing: 0.95px;
+  margin-bottom: 3rem;
+
+  @include respond-below(lg) {
+    font-size: $fs-heading-secondary-md;
+  }
+
+  @include respond-below(sm) {
+    font-size: $fs-heading-secondary-sm;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    @include size(20rem, 0.2rem);
+    background-color: $primary;
+    margin-top: 3rem;
+  }
+
+  &--center {
+    &::after {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
 .prime-text {
   font-size: $fs-text-lg;
   font-weight: $fw-light;
@@ -43,4 +74,11 @@ strong {
   @include respond-below(sm) {
     font-size: $fs-text-sm;
   }
+}
+
+.paragraph {
+  font-size: $fs-paragraph-sm;
+  font-weight: $fw-light;
+  line-height: 1.7;
+  letter-spacing: 3%;
 }

@@ -29,13 +29,30 @@
     .nav-link {
       font-size: $fs-nav-sm;
       color: $secondary;
-      padding-left: 1.5rem !important;
-      padding-right: 1.5rem !important;
+      padding: 1rem !important;
+      margin: 0 1rem;
       @include trans;
+      display: block;
+      position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        @include size(0, 2px);
+        background: $primary;
+        margin-top: 0.5rem;
+        @include absolute(bottom 0 left 50% right 50%);
+        transform: translateX(-50%);
+        @include trans;
+      }
 
       &:hover,
       &.active {
         color: $primary;
+
+        &::after {
+          width: 100%;
+        }
       }
     }
   }
@@ -51,6 +68,10 @@
       .nav-link {
         padding: 1rem;
         font-size: $fs-nav-md;
+
+        &::after {
+          display: none;
+        }
       }
     }
   }

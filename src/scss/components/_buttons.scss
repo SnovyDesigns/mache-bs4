@@ -12,22 +12,16 @@
   letter-spacing: 0.38px;
   overflow: hidden;
   position: relative;
-
-  @include respond-below(sm) {
-    font-size: $fs-button-md;
-  }
-}
-
-.btn-primary {
-  background: transparent;
-  border-width: 2px;
+  cursor: pointer;
+  border: 2px solid;
   z-index: 1;
+  @include trans(0.4);
 
   &::before {
     content: '';
     display: block;
     @include size(0, 100%);
-    background: $primary;
+    background: $secondary;
     @include absolute(top 0 left 50% right 50%);
     z-index: -1;
     transform: skew(25deg) translateX(-50%);
@@ -35,11 +29,65 @@
   }
 
   &:hover {
-    background: transparent;
+    background: $primary;
     border-color: $primary;
+    color: $primary;
 
     &::before {
       width: 120%;
+    }
+  }
+
+  @include respond-below(sm) {
+    font-size: $fs-button-md;
+  }
+}
+
+.btn-primary {
+  background: $primary;
+
+  &::before {
+    background: $secondary;
+  }
+
+  &:hover {
+    background: $primary;
+    border-color: $primary;
+    color: $primary;
+  }
+}
+
+.btn-link {
+  display: inline-flex;
+  text-transform: uppercase;
+  font-size: $fs-button-sm;
+  text-transform: uppercase;
+  font-weight: $fw-bold;
+  letter-spacing: 0.38px;
+  align-items: center;
+  position: relative;
+
+  svg {
+    @include absolute(left 0);
+    @include trans(0.4);
+  }
+
+  span {
+    margin-left: 3.8rem;
+    margin-right: 1rem;
+    @include trans(0.4);
+  }
+
+  &:focus,
+  &:hover {
+    color: $primary;
+
+    svg {
+      left: 100%;
+    }
+
+    span {
+      margin-left: 0;
     }
   }
 }
