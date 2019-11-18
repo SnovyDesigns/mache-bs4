@@ -61,6 +61,16 @@ strong {
   }
 }
 
+.heading-tertiary {
+  font-size: $fs-heading-tertiary-sm;
+  text-transform: uppercase;
+  letter-spacing: 3%;
+
+  @include respond-below(lg) {
+    font-size: $fs-heading-tertiary-md;
+  }
+}
+
 .prime-text {
   font-size: $fs-text-lg;
   font-weight: $fw-light;
@@ -81,4 +91,10 @@ strong {
   font-weight: $fw-light;
   line-height: 1.7;
   letter-spacing: 3%;
+
+  &--center {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

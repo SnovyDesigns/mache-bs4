@@ -1,0 +1,42 @@
+.services {
+  padding: 9rem 0 7rem;
+
+  @include respond-below(xl) {
+    padding-top: 7rem;
+  }
+
+  @include respond-below(lg) {
+    padding-bottom: 1rem;
+  }
+
+  &__icon {
+    @include size(13rem, 13rem);
+    border: 2px solid $grey;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    @include center;
+    overflow: hidden;
+    @include trans(0.4);
+
+    &::before {
+      content: '';
+      display: block;
+      @include size(0, 110%);
+      background: $primary;
+      @include absolute(top 0 left 50% right 50%);
+      z-index: -1;
+      transform: translateX(-50%);
+      @include trans(0.4);
+    }
+
+    &:hover {
+      border-color: transparent;
+      transform: scale(1.15);
+
+      &::before {
+        width: 120%;
+      }
+    }
+  }
+}
