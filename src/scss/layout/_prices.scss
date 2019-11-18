@@ -1,0 +1,7 @@
+.prices {
+  padding: 7rem 0;
+
+  @include respond-below(lg) {
+    padding-bottom: 4rem;
+  }
+}

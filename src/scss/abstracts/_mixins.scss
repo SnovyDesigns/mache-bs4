@@ -13,7 +13,7 @@ $unit: rem !default;
 }
 
 // Transition
-@mixin trans($speed: 0.35, $props: all, $easing: ease-in) {
+@mixin trans($speed: 0.25, $props: all, $easing: ease-in) {
   transition: $props #{$speed}s $easing;
 }
 

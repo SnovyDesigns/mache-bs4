@@ -71,4 +71,14 @@ html(lang="en")
           a.carousel-control-next(data-slide='next', href='#quote-carousel', role='button')
             span.carousel-control-next-icon(aria-hidden='true')
             span.sr-only Next
-            
+
+    section#prices.bg-light.prices
+      .container
+        .row
+          .col.text-center
+            h2.heading-secondary.heading-secondary--center.text-dark Check Our Prices
+            p.paragraph.paragraph--center.u-margin-bottom-xl Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+        .row
+          for card in [{price: "19", type: "STANDARD", first: "5", second: "200 MB"}, {price: "39", type: "BUSINESS", first: "15", second: "1 GB"}, {price: "59", type: "PREMIUM", first: "30", second: "2 GB"}, {price: "99", type: "UNLIMITED", first: "Unlimited", second: "Unlimited"}]
+            .col-md-6.col-lg-3.text-center.mb-5.mb-lg-0
+              +card(card)
