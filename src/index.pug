@@ -50,4 +50,25 @@ html(lang="en")
               .mx-auto.services__icon.u-margin-bottom-sm
                 +svg-services-icons(index+1)
               h3.heading-tertiary.u-text-primary #{item}
+    
+    section.text-white.d-none.d-md-block.quote
+      .container-fluid.quote__container
+        #quote-carousel.carousel.slide.quote__carousel(data-ride='carousel')
+          ol.carousel-indicators
+            li.active(data-slide-to='0', data-target='#quote-carousel')
+            li(data-slide-to='1', data-target='#quote-carousel')
+            li(data-slide-to='2', data-target='#quote-carousel')
+          .carousel-inner
+            for quote, index in ["Lorem ipsum dolor sit amet, consectetur adipisicing elit, std do eiusmod tempor incididunt ut labore tet dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam ex eaque quo doloribus quis? Qui ad consectetur ex placeat repellat eum soluta. Quae doloribus, repellat id autem nesciunt nam corrupti earum iusto dicta.", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos autem voluptatum voluptates quas? Veritatis tempore in a totam obcaecati animi tenetur? Id iusto ab voluptatibus non suscipit unde ipsum, quis facilis veritatis neque?"]
+              .carousel-item.quote__item(class=`${index === 0 ? 'active' : ''}`)
+                .quote__item-wrapper.text-center
+                  +svg-quote-icon
+                  blockquote.blockquote=quote
+                  +svg-quote-icon
+          a.carousel-control-prev(data-slide='prev', href='#quote-carousel', role='button')
+            span.carousel-control-prev-icon(aria-hidden='true')
+            span.sr-only Previous
+          a.carousel-control-next(data-slide='next', href='#quote-carousel', role='button')
+            span.carousel-control-next-icon(aria-hidden='true')
+            span.sr-only Next
             

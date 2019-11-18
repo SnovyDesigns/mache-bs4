@@ -1,0 +1,41 @@
+// Import BS4 carousel styles
+@import '~bootstrap/scss/carousel';
+
+// ----------------------------------------------
+
+.quote {
+  &__container {
+    padding: 0;
+  }
+
+  &__item {
+    height: 50rem;
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        background: $gradient, iurl('quote_bg-#{$i}.jpg');
+        background-position: center;
+        background-size: cover;
+        background-blend-mode: multiply;
+      }
+    }
+
+    svg:nth-of-type(2) {
+      transform: rotate(180deg);
+    }
+
+    blockquote {
+      margin: 3rem 0;
+    }
+  }
+
+  &__item-wrapper {
+    @include absolute(top 50% left 50%);
+    transform: translate(-50%, -50%);
+    width: 60%;
+  }
+
+  .carousel-indicators li.active {
+    background-color: $primary;
+  }
+}

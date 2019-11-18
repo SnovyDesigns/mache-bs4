@@ -98,3 +98,14 @@ strong {
     margin-right: auto;
   }
 }
+
+.blockquote {
+  font-size: $fs-blockquote-md;
+  font-weight: $fw-light;
+  line-height: 1.6;
+  letter-spacing: 3%;
+
+  @include respond-below(xl) {
+    font-size: $fs-blockquote-sm;
+  }
+}
