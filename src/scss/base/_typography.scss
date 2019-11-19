@@ -110,3 +110,10 @@ strong {
     font-size: $fs-blockquote-sm;
   }
 }
+
+.caption {
+  font-size: $fs-caption;
+  font-weight: $fw-light;
+  text-transform: uppercase;
+  letter-spacing: 8%;
+}
