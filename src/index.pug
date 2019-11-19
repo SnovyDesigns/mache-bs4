@@ -105,5 +105,17 @@ html(lang="en")
               | Community Today
           .col-12.d-flex.justify-content-center
             button.btn.btn-secondary Join Us
+    
+    section.articles
+      .container
+        .row
+          .col.text-center
+            h2.heading-secondary.heading-secondary--center.text-dark Our Latest Articles
+            p.paragraph.paragraph--center.u-margin-bottom-xl Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+        .row
+          for article,index in ['Ebony & Ivory','Smart Stationary','Clever Poster','Vinyl Record','Treehouse Template','Burned Logo',]
+            .col-10.offset-1.col-md-6.offset-md-0.col-lg-4.mb-5
+              +article-card(article,index)
+
             
             

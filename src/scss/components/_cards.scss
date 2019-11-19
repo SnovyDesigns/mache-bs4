@@ -3,9 +3,14 @@
 
 // ----------------------------------------------
 
-.price-card {
+.card {
   position: relative;
-  box-shadow: 0 15px 30px rgba($color: $dark-grey, $alpha: 0.2);
+  box-shadow: 0 10px 20px rgba($color: $dark-grey, $alpha: 0.2);
+}
+
+// ----------------------------------------------
+
+.price-card {
   @include size(100%, 40rem);
 
   @include respond-below(lg) {
@@ -109,6 +114,56 @@
       .price-card__price {
         font-size: 4rem;
       }
+    }
+  }
+}
+
+// ----------------------------------------------
+
+.article-card {
+  position: relative;
+  @include size(100%, 22.1rem);
+
+  &__image {
+    @include absolute(top 0 left 0);
+    @include size(100%);
+
+    &::before {
+      content: '';
+      display: block;
+      @include size(100%, 6%);
+      background: rgba($color: $primary, $alpha: 0.85);
+      @include absolute(bottom 0 left 0);
+      clip-path: polygon(0 0, 100% 75%, 100% 100%, 0 100%);
+      z-index: 2;
+      @include trans(0.5);
+    }
+  }
+
+  &__img {
+    @include absolute(top 0 left 0);
+    @include size(100%);
+    @include trans(0.5);
+  }
+
+  &__body {
+    @include absolute(bottom 2.5rem left 10%);
+    @include size(80%, 4.6rem);
+    @include trans(0.4);
+    overflow: hidden;
+    z-index: 3;
+  }
+
+  &:focus,
+  &:hover {
+    .article-card__img,
+    .article-card__image::before {
+      opacity: 0;
+    }
+
+    .article-card__body {
+      @include size(100%);
+      @include absolute(bottom 0 left 0);
     }
   }
 }
