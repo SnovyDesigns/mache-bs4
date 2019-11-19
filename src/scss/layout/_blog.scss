@@ -1,0 +1,8 @@
+.blog {
+  height: 55rem;
+  background: $gradient, iurl('blog_bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+}
