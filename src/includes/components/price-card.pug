@@ -1,0 +1,17 @@
+mixin price-card(card)
+  .card.text-center.price-card
+    .card-header.text-white.price-card__face
+      .price-card__container
+        h3.price-card__heading=card.type
+        .card-title.mb-0.d-flex.justify-content-center
+          span.align-self-center.mr-2.price-card__price-sign $ 
+          h4.price-card__price=card.price
+        small.d-block.price-card__small per month
+    .card-body.price-card__face
+      .price-card__container
+        ul.list-unstyled.u-margin-bottom-md
+          li.paragraph #{card.first} Projects
+          li.paragraph #{card.second} Storage
+          li.paragraph Notification settings
+          li.paragraph Password protection
+        button.btn.btn-primary BUY NOW 

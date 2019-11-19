@@ -3,7 +3,7 @@
 
 // ----------------------------------------------
 
-.card {
+.price-card {
   position: relative;
   box-shadow: 0 15px 30px rgba($color: $dark-grey, $alpha: 0.2);
   @include size(100%, 40rem);
@@ -94,19 +94,19 @@
   @media only screen and (hover: hover) {
     &:focus,
     &:hover {
-      .card__face:nth-of-type(1) {
+      .price-card__face:nth-of-type(1) {
         height: 13rem;
       }
 
-      .card__heading {
+      .price-card__heading {
         font-size: 2.5rem;
       }
 
-      .card__price-sign {
+      .price-card__price-sign {
         font-size: 2rem;
       }
 
-      .card__price {
+      .price-card__price {
         font-size: 4rem;
       }
     }
