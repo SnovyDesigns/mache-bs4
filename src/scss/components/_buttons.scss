@@ -21,7 +21,6 @@
     content: '';
     display: block;
     @include size(0, 100%);
-    background: $secondary;
     @include absolute(top 0 left 50% right 50%);
     z-index: -1;
     transform: skew(25deg) translateX(-50%);
@@ -29,10 +28,6 @@
   }
 
   &:hover {
-    background: $primary;
-    border-color: $primary;
-    color: $primary;
-
     &::before {
       width: 120%;
     }
@@ -44,8 +39,6 @@
 }
 
 .btn-primary {
-  background: $primary;
-
   &::before {
     background: $secondary;
   }
@@ -54,6 +47,21 @@
     background: $primary;
     border-color: $primary;
     color: $primary;
+  }
+}
+
+.btn-secondary {
+  color: $black;
+  border-color: $secondary;
+
+  &::before {
+    background: $black;
+  }
+
+  &:hover {
+    background: $secondary;
+    border-color: $secondary;
+    color: $secondary;
   }
 }
 
