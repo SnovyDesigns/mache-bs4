@@ -10,5 +10,11 @@ const topHeading = document.querySelector('.top__heading'),
   topParagraph = document.querySelector('.top__paragraph'),
   topButton = document.querySelector('.top__button');
 
-console.log(topHeading);
-gsap.to(topHeading, { duration: 1, x: 300 });
+const headerTL = () => {
+  const tl = gsap.timeline();
+  tl.to([topHeading, topParagraph], { duration: 1, x: 300 });
+
+  return tl;
+};
+
+export default headerTL;

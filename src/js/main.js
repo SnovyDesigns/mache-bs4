@@ -1,2 +1,6 @@
 import './vendors/bootstrap';
-import './animations/top/topAnimations';
+import headerTL from './animations/top/topAnimations';
+
+window.onload = () => {
+  headerTL();
+};
