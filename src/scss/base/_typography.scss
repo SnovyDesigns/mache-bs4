@@ -65,7 +65,7 @@ strong {
   font-size: $fs-heading-tertiary-sm;
   font-weight: $fw-regular;
   text-transform: uppercase;
-  letter-spacing: 3%;
+  letter-spacing: 0.75px;
 
   @include respond-below(lg) {
     font-size: $fs-heading-tertiary-md;
@@ -91,7 +91,7 @@ strong {
   font-size: $fs-paragraph-sm;
   font-weight: $fw-light;
   line-height: 1.7;
-  letter-spacing: 3%;
+  letter-spacing: 0.45px;
 
   &--center {
     width: 75%;
@@ -104,7 +104,7 @@ strong {
   font-size: $fs-blockquote-md;
   font-weight: $fw-light;
   line-height: 1.6;
-  letter-spacing: 3%;
+  letter-spacing: 0.95px;
 
   @include respond-below(xl) {
     font-size: $fs-blockquote-sm;
@@ -115,5 +115,5 @@ strong {
   font-size: $fs-caption;
   font-weight: $fw-light;
   text-transform: uppercase;
-  letter-spacing: 8%;
+  letter-spacing: 1.95px;
 }
