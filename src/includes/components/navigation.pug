@@ -1,10 +1,10 @@
 mixin nav(links)
-  nav#main-nav.navbar.navbar-expand-md.fixed-top
+  nav#main-nav.navbar.navbar-expand-md.fixed-top.nav
     .container
       a.navbar-brand(href="index.html")
         span /// 
         | Mache
-      a.navbar-toggler(data-target="#navbarCollapse" data-toggle="collapse")
+      a.navbar-toggler.nav__toggler(data-target="#navbarCollapse" data-toggle="collapse")
         +svg-menu-icon
       #navbarCollapse.collapse.navbar-collapse
         ul.navbar-nav.ml-auto

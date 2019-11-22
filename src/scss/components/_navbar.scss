@@ -101,3 +101,10 @@
     }
   }
 }
+
+// Animation styles
+.nav {
+  &__close {
+    display: none;
+  }
+}
