@@ -4,11 +4,11 @@ mixin nav(links)
       a.navbar-brand(href="index.html")
         span /// 
         | Mache
-      a.navbar-toggler.nav__toggler(data-target="#navbarCollapse" data-toggle="collapse")
+      a.navbar-toggler.nav__toggler.collapsed(data-target="#navbarCollapse" data-toggle="collapse")
         +svg-menu-icon
       #navbarCollapse.collapse.navbar-collapse
         ul.navbar-nav.ml-auto
           for link, index in links
             li.nav-item
               - const upperName = require("./utils/upperName.js");
-                a.nav-link(href=`#${link}`)= `${upperName(link)}`
+                a.nav-link.nav__link(href=`#${link}`)= `${upperName(link)}`

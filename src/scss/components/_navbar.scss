@@ -5,7 +5,6 @@
 
 .navbar {
   background: transparent;
-  @include trans;
   padding: 1rem;
   position: fixed;
 
@@ -77,6 +76,8 @@
   }
 
   .navbar-collapse {
+    @include trans(0.4);
+
     .nav-item {
       position: relative;
       padding: 2rem;
@@ -104,7 +105,13 @@
 
 // Animation styles
 .nav {
+  @include trans(0.4);
+
   &__close {
     display: none;
+  }
+
+  &--fixed {
+    background-color: $black;
   }
 }
