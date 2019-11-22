@@ -3,6 +3,8 @@ import CSSRulePlugin from 'gsap/CSSRulePlugin';
 
 gsap.registerPlugin(CSSRulePlugin);
 
+import toUp from '../helpers/toUp';
+
 // ----------------------------------------------
 
 const topHeading = document.querySelector('.top__heading'),
@@ -13,24 +15,7 @@ const topHeading = document.querySelector('.top__heading'),
 gsap.set(topButton, { transitionDuration: 0 });
 
 const headerTL = () => {
-  const tl = gsap.timeline();
-  tl.from([topHeading, topParagraph, topButton], {
-    duration: 1,
-    y: 30,
-    opacity: 0,
-    ease: 'Power2.easeIn',
-    stagger: 0.4
-  }).from(
-    topHeadingAfter,
-    {
-      cssRule: { width: 0 },
-      duration: 1.25,
-      ease: 'Power0.easeNone'
-    },
-    '-=1'
-  );
-
-  return tl;
+  toUp(topHeadingAfter, topHeading, topParagraph, topButton);
 };
 
 // ----------------------------------------------
