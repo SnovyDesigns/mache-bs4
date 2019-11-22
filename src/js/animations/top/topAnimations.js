@@ -1,9 +1,11 @@
 import gsap from 'gsap';
 import CSSRulePlugin from 'gsap/CSSRulePlugin';
-
-gsap.registerPlugin(CSSRulePlugin);
-
 import toUp from '../helpers/toUp';
+
+// ----------------------------------------------
+
+// Required GSAP register plugins
+gsap.registerPlugin(CSSRulePlugin);
 
 // ----------------------------------------------
 
