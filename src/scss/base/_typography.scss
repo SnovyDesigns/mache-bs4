@@ -34,6 +34,7 @@ strong {
   font-size: $fs-heading-secondary-lg;
   font-weight: $fw-light;
   font-style: italic;
+  color: $dark;
   letter-spacing: 0.95px;
   margin-bottom: 3rem;
 
@@ -43,21 +44,6 @@ strong {
 
   @include respond-below(sm) {
     font-size: $fs-heading-secondary-sm;
-  }
-
-  &::after {
-    content: '';
-    display: block;
-    @include size(20rem, 0.2rem);
-    background-color: $primary;
-    margin-top: 3rem;
-  }
-
-  &--center {
-    &::after {
-      margin-left: auto;
-      margin-right: auto;
-    }
   }
 }
 
@@ -116,4 +102,23 @@ strong {
   font-weight: $fw-light;
   text-transform: uppercase;
   letter-spacing: 1.95px;
+}
+
+// Animation styles
+$names: top, about, services, prices, articles, blog, contact;
+@each $name in $names {
+  .#{$name}__heading::after {
+    content: '';
+    display: block;
+    @include size(20rem, 0.2rem);
+    background-color: $primary;
+    margin-top: 3rem;
+  }
+
+  .#{$name}__heading--center {
+    &::after {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }

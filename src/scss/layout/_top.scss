@@ -13,14 +13,4 @@
     height: 65rem;
     margin-top: 6.5rem;
   }
-
-  &__heading {
-    &::after {
-      content: '';
-      display: block;
-      @include size(20rem, 0.2rem);
-      background: $primary;
-      margin: 3rem auto 5rem;
-    }
-  }
 }

@@ -1,4 +1,10 @@
 import gsap from 'gsap';
+import CSSRulePlugin from 'gsap/CSSRulePlugin';
+
+// ----------------------------------------------
+
+// Required GSAP register plugins
+gsap.registerPlugin(CSSRulePlugin);
 
 // ----------------------------------------------
 
