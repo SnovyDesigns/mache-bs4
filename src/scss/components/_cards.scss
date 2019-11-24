@@ -13,9 +13,9 @@
 .price-card {
   @include size(100%, 40rem);
 
-  @include respond-below(lg) {
+  @include respond-below(xl) {
     &__face:nth-of-type(1) {
-      height: 20rem;
+      height: 18rem;
     }
 
     &__heading {
@@ -38,7 +38,7 @@
     @include center;
     @include trans(0.4);
 
-    @include respond-below(lg) {
+    @include respond-below(xl) {
       position: relative;
     }
 
@@ -58,9 +58,9 @@
 
     &:nth-of-type(2) {
       z-index: 1;
-      padding-top: 13rem;
+      padding-top: 18rem;
 
-      @include respond-below(lg) {
+      @include respond-below(xl) {
         padding-top: 0;
       }
     }
@@ -100,7 +100,7 @@
     &:focus,
     &:hover {
       .price-card__face:nth-of-type(1) {
-        height: 13rem;
+        height: 18rem;
       }
 
       .price-card__heading {

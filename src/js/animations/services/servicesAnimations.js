@@ -7,12 +7,9 @@ import toUp from '../helpers/toUp';
 // Required GSAP register plugins
 gsap.registerPlugin(CSSRulePlugin);
 
-let text = '.services__icon-1';
-
 // ----------------------------------------------
 
-const servicesSection = document.querySelector('.services'),
-  servicesHeading = document.querySelector('.services__heading'),
+const servicesHeading = document.querySelector('.services__heading'),
   servicesHeadingAfter = CSSRulePlugin.getRule('.services__heading::after'),
   servicesParagraph = document.querySelector('.services__paragraph'),
   servicesIcons = document.querySelectorAll('.services__icon'),
