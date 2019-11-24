@@ -89,23 +89,24 @@ html(lang="en")
         .row
           for title, index in ["HIGH RESOLUTION","PHOTOGRAPHY","EASY TO CUSTOMIZE","24/7 SUPPORT","POWERFULL THEME","SEO OPTIMIZATION"]
             .col-6.col-lg-4.mb-5.mt-5
-              .media.pl-3.pr-3.flex-column.flex-sm-row.align-items-center.align-items-md-start
+              .media.pl-3.pr-3.flex-column.flex-sm-row.align-items-center.align-items-md-start.feature
                 .mr-0.mr-sm-5
-                  +svg-features-icons(index+1)
+                  .feature__icon
+                    +svg-features-icons(index+1)
                 .media-body.features__body
-                  h3.mt-3.mt-sm-0.text-center.text-sm-left.heading-tertiary.u-text-primary=title
-                  p.mb-0.d-none.d-md-block.paragraph Lorem ipsum dolor sit amet,  adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+                  h3.mt-3.mt-sm-0.text-center.text-sm-left.heading-tertiary.u-text-primary.feature__title=title
+                  p.mb-0.d-none.d-md-block.paragraph.feature__paragraph Lorem ipsum dolor sit amet,  adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
     
     section.bg-primary.community
       .container-fluid.h-100
         .row.h-100
           .col-12
-            h2.heading-primary.text-center.mb-5.u-text-white
+            h2.heading-primary.text-center.mb-5.u-text-white.community__heading
               | Became A Part Of 
               strong Mache 
               | Community Today
           .col-12.d-flex.justify-content-center
-            button.btn.btn-secondary Join Us
+            button.btn.btn-secondary.community__button Join Us
     
     section.articles
       .container
