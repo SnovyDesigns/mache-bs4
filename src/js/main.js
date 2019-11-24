@@ -1,9 +1,11 @@
 import './vendors/bootstrap';
 import './animations/navbar/navbarAnimations';
-import aboutTL from './animations/about/aboutAnimations';
 import headerTL from './animations/top/topAnimations';
+import aboutTL from './animations/about/aboutAnimations';
+import servicesTL from './animations/services/servicesAnimations';
 
 window.onload = () => {
-  // headerTL();
+  headerTL();
   aboutTL();
+  servicesTL();
 };

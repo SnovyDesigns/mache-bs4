@@ -43,13 +43,14 @@ html(lang="en")
         .row
           .col.text-center
             h2.heading-secondary.services__heading.services__heading--center Our Services
-            p.paragraph.paragraph--center.u-margin-bottom-xl Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+            p.paragraph.paragraph--center.u-margin-bottom-xl.services__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
         .row
           for item, index in ["FULLY EDITABLE", "FREE DOWNLOAD", "MODERN DESIGN", "100% RESPONSIVE"]
             .col-6.col-lg-3.text-center.mb-5.mb-lg-0
-              .mx-auto.services__icon.u-margin-bottom-sm
+              .mx-auto.services__icon.u-margin-bottom-sm(class=`services__icon-${index+1}`)
+                .bg
                 +svg-services-icons(index+1)
-              h3.heading-tertiary.u-text-primary #{item}
+              h3.heading-tertiary.u-text-primary.services__subheading=item
     
     section.text-white.d-none.d-md-block.quote
       .container-fluid.quote__container

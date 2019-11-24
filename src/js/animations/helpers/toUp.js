@@ -24,7 +24,7 @@ const toUp = (after, ...args) => {
       duration: 1.25,
       ease: 'Power0.easeNone'
     },
-    '-=1'
+    1.5
   );
 
   return tl;

@@ -17,26 +17,19 @@
     display: flex;
     @include center;
     overflow: hidden;
-    @include trans(0.4);
 
-    &::before {
+    .bg {
       content: '';
       display: block;
-      @include size(0, 110%);
+      @include size(0, 100%);
       background: $primary;
       @include absolute(top 0 left 50% right 50%);
       z-index: -1;
       transform: translateX(-50%);
-      @include trans(0.4);
     }
 
     &:hover {
       border-color: transparent;
-      transform: scale(1.15);
-
-      &::before {
-        width: 120%;
-      }
     }
   }
 }

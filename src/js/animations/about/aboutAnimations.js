@@ -54,7 +54,7 @@ const aboutTL = () => {
     )
     .from(svgAboutSmog1, { duration: 4, y: 60, opacity: 0 }, 'a-start+=2.9')
     .to(svgAboutSmog1, {
-      duration: 3,
+      duration: 5,
       morphSVG: svgAboutSmog2,
       repeat: -1,
       yoyo: true
