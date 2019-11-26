@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import CSSRulePlugin from 'gsap/CSSRulePlugin';
-import toUp from '../helpers/toUp';
+import toUp from '../helpers/toUpAlt';
 
 // ----------------------------------------------
 

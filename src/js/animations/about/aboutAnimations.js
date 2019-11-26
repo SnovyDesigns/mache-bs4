@@ -1,7 +1,9 @@
 import gsap from 'gsap';
 import CSSRulePlugin from 'gsap/CSSRulePlugin';
 import MorphSVGPlugin from 'gsap/MorphSVGPlugin';
+import ScrollMagic from 'scrollmagic';
 import toUp from '../helpers/toUp';
+import setDown from '../helpers/setDown';
 
 // ----------------------------------------------
 
@@ -10,7 +12,8 @@ gsap.registerPlugin(CSSRulePlugin, MorphSVGPlugin);
 
 // ----------------------------------------------
 
-const aboutSection = document.querySelector('.about'),
+const controller = new ScrollMagic.Controller(),
+  aboutSection = document.querySelector('.about'),
   aboutHeading = document.querySelector('.about__heading'),
   aboutHeadingAfter = CSSRulePlugin.getRule('.about__heading::after'),
   aboutParagraph = document.querySelector('.about__paragraph'),
@@ -24,35 +27,47 @@ const aboutSection = document.querySelector('.about'),
 
 // ------------------------------------------
 
+// Clean elements before animation
+
+const aboutClean = () => {
+  setDown(aboutHeadingAfter, aboutHeading, aboutParagraph, aboutButton);
+  gsap.set(
+    [svgAboutDesk, svgAboutGirl, svgAboutFlower, svgAboutCup, svgAboutSmog1],
+    { opacity: 0 }
+  );
+  gsap.set(svgAboutDesk, { y: 30 });
+  gsap.set(svgAboutGirl, { y: -30 });
+  gsap.set(svgAboutFlower, { x: -60 });
+  gsap.set(svgAboutCup, { x: 60 });
+  gsap.set(svgAboutSmog1, { y: 60 });
+};
+
+// ------------------------------------------
+
 const aboutTL = () => {
-  const tl = gsap.timeline();
+  const tl = gsap.timeline({ paused: true });
 
   tl.add('a-start')
     .add(
       toUp(aboutHeadingAfter, aboutHeading, aboutParagraph, aboutButton),
       'a-start'
     )
-    .from(
-      svgAboutDesk,
-      { duration: 1, y: 30, opacity: 0, ease: 'power2.easeOut' },
+    .to(
+      [svgAboutDesk, svgAboutGirl],
+      { duration: 1, y: 0, opacity: 1, ease: 'power2.easeOut' },
       'a-start+=1'
     )
-    .from(
-      svgAboutGirl,
-      { duration: 1, y: -30, opacity: 0, ease: 'power2.easeOut' },
-      'a-start+=1'
-    )
-    .from(
+    .to(
       svgAboutFlower,
-      { duration: 0.7, x: -60, opacity: 0, ease: 'back.out(1.4)' },
+      { duration: 0.7, x: 0, opacity: 1, ease: 'back.out(1.4)' },
       'a-start+=2'
     )
-    .from(
+    .to(
       svgAboutCup,
-      { duration: 0.9, x: 60, opacity: 0, ease: 'back.out(1.7)' },
+      { duration: 0.9, x: 0, opacity: 1, ease: 'back.out(1.7)' },
       'a-start+=2.1'
     )
-    .from(svgAboutSmog1, { duration: 4, y: 60, opacity: 0 }, 'a-start+=2.9')
+    .to(svgAboutSmog1, { duration: 4, y: 0, opacity: 1 }, 'a-start+=2.9')
     .to(svgAboutSmog1, {
       duration: 5,
       morphSVG: svgAboutSmog2,
@@ -65,4 +80,20 @@ const aboutTL = () => {
 
 // ------------------------------------------
 
-export default aboutTL;
+const aboutScene = () => {
+  const scene = new ScrollMagic.Scene({
+    triggerElement: aboutSection,
+    triggerHook: 0.45,
+    reverse: false
+  })
+    .on('enter', () => {
+      aboutTL().play();
+    })
+    .addTo(controller);
+
+  return scene;
+};
+
+// ------------------------------------------
+
+export { aboutClean, aboutScene };

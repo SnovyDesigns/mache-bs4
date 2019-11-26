@@ -1,10 +1,10 @@
 mixin article-card(article,index)
-  .card.ml-3.mr-3.article-card
+  .card.ml-0.mr-0.ml-sm-3.mr-sm-3.article-card
     .article-card__image
       img(src=require(`./img/article_bg-${index+1}.jpg`)).card-img-top.img-fluid.article-card__img
     .card-body.bg-light.article-card__body
-      h5.card-title.mb-3.heading-tertiary=article
-      p.card-text.paragraph Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illo quibusdam mollitia excepturi, ipsum fugiat assumenda accusantium cumque esse minima quas est 
-      a.btn-link.mt-5.pb-2(href="#") 
+      h5.card-title.mb-3.heading-tertiary.article-card__title=article
+      p.card-text.paragraph.article-card__paragraph Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illo quibusdam mollitia excepturi, ipsum fugiat assumenda accusantium cumque esse minima quas est 
+      a.btn-link.mt-3.mt-sm-5.pb-2(href="#") 
         span Go to Article
         +svg-more-icon

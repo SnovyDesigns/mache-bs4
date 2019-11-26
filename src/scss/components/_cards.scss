@@ -124,9 +124,25 @@
   position: relative;
   @include size(100%, 22.1rem);
 
+  @include respond-below(sm) {
+    height: 10rem;
+  }
+
+  @include respond-between(md, lg) {
+    height: 25.4rem;
+  }
+
+  @include respond-between(lg, xl) {
+    height: 28rem;
+  }
+
   &__image {
     @include absolute(top 0 left 0);
     @include size(100%);
+
+    @include respond-below(md) {
+      @include size(30%, 10rem);
+    }
 
     &::before {
       content: '';
@@ -137,6 +153,10 @@
       clip-path: polygon(0 0, 100% 75%, 100% 100%, 0 100%);
       z-index: 2;
       @include trans(0.5);
+
+      @include respond-below(md) {
+        display: none;
+      }
     }
   }
 
@@ -152,18 +172,47 @@
     @include trans(0.4);
     overflow: hidden;
     z-index: 3;
-  }
 
-  &:focus,
-  &:hover {
-    .article-card__img,
-    .article-card__image::before {
-      opacity: 0;
+    @include respond-below(md) {
+      position: relative;
+      bottom: 0;
+      left: 30%;
+      @include size(70%, 10rem);
     }
 
-    .article-card__body {
-      @include size(100%);
-      @include absolute(bottom 0 left 0);
+    @include respond-between(md, lg) {
+      bottom: 3.25rem;
+    }
+
+    @include respond-between(lg, xl) {
+      bottom: 4rem;
+    }
+  }
+
+  &__title {
+    @include respond-below(md) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__paragraph {
+    @include respond-below(md) {
+      display: none;
+    }
+  }
+
+  @include respond-above(md) {
+    &:focus,
+    &:hover {
+      .article-card__img,
+      .article-card__image::before {
+        opacity: 0;
+      }
+
+      .article-card__body {
+        @include size(100%);
+        @include absolute(bottom 0 left 0);
+      }
     }
   }
 }

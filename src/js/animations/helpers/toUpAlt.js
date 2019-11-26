@@ -8,19 +8,19 @@ gsap.registerPlugin(CSSRulePlugin);
 
 // ----------------------------------------------
 
-const toUp = (after, ...args) => {
+const toUpAlt = (after, ...args) => {
   const tl = gsap.timeline();
 
-  tl.to([...args], {
+  tl.from([...args], {
     duration: 0.8,
-    y: 0,
-    opacity: 1,
+    y: 30,
+    opacity: 0,
     ease: 'Power2.easeIn',
     stagger: 0.4
-  }).to(
+  }).from(
     after,
     {
-      cssRule: { width: '20rem' },
+      cssRule: { width: 0 },
       duration: 1.25,
       ease: 'Power0.easeNone'
     },
@@ -30,4 +30,4 @@ const toUp = (after, ...args) => {
   return tl;
 };
 
-export default toUp;
+export default toUpAlt;

@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import CSSRulePlugin from 'gsap/CSSRulePlugin';
-import toUp from '../helpers/toUp';
+import toUpAlt from '../helpers/toUpAlt';
 
 // ----------------------------------------------
 
@@ -14,10 +14,14 @@ const topHeading = document.querySelector('.top__heading'),
   topParagraph = document.querySelector('.top__paragraph'),
   topButton = document.querySelector('.top__button');
 
+// ----------------------------------------------
+
 gsap.set(topButton, { transitionDuration: 0 });
 
+// ----------------------------------------------
+
 const headerTL = () => {
-  toUp(topHeadingAfter, topHeading, topParagraph, topButton);
+  toUpAlt(topHeadingAfter, topHeading, topParagraph, topButton);
 };
 
 // ----------------------------------------------
