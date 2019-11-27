@@ -18,12 +18,12 @@ const controller = new ScrollMagic.Controller(),
   contactHeadingAfter = CSSRulePlugin.getRule('.contact__heading::after'),
   contactParagraph = document.querySelector('.contact__paragraph'),
   contactButton = document.querySelector('.contact__button'),
-  svgContactGuy = document.getElementById('svg-contact-guy'),
-  svgContactLaptop = document.getElementById('svg-contact-laptop'),
-  svgContactLine = document.getElementById('svg-contact-line'),
-  svgContactCup = document.getElementById('svg-contact-cup'),
-  svgContactSmog1 = document.getElementById('svg-contact-smog1'),
-  svgContactSmog2 = document.getElementById('svg-contact-smog2');
+  svgContactGuy = document.getElementsByClassName('svg-contact-guy'),
+  svgContactLaptop = document.getElementsByClassName('svg-contact-laptop'),
+  svgContactLine = document.getElementsByClassName('svg-contact-line'),
+  svgContactCup = document.getElementsByClassName('svg-contact-cup'),
+  svgContactSmog1 = document.getElementsByClassName('svg-contact-smog1'),
+  svgContactSmog2 = document.getElementsByClassName('svg-contact-smog2');
 
 // ------------------------------------------
 

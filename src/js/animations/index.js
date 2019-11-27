@@ -1,4 +1,3 @@
-import gsap from 'gsap';
 import './navbar/navbarAnimations';
 import headerTL from './top/topAnimations';
 import { aboutClean, aboutScene } from './about/aboutAnimations';
