@@ -5,4 +5,8 @@
   background-size: cover;
   background-blend-mode: multiply;
   background-attachment: fixed;
+
+  @include respond-below(lg) {
+    background-attachment: scroll;
+  }
 }

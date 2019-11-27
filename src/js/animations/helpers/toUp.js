@@ -16,7 +16,7 @@ const toUp = (after, ...args) => {
     y: 0,
     opacity: 1,
     ease: 'Power2.easeIn',
-    stagger: 0.4
+    stagger: 0.25
   }).to(
     after,
     {

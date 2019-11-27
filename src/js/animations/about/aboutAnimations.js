@@ -28,7 +28,6 @@ const controller = new ScrollMagic.Controller(),
 // ------------------------------------------
 
 // Clean elements before animation
-
 const aboutClean = () => {
   setDown(aboutHeadingAfter, aboutHeading, aboutParagraph, aboutButton);
   gsap.set(
@@ -45,7 +44,7 @@ const aboutClean = () => {
 // ------------------------------------------
 
 const aboutTL = () => {
-  const tl = gsap.timeline({ paused: true });
+  const tl = gsap.timeline();
 
   tl.add('a-start')
     .add(
@@ -87,7 +86,7 @@ const aboutScene = () => {
     reverse: false
   })
     .on('enter', () => {
-      aboutTL().play();
+      aboutTL();
     })
     .addTo(controller);
 

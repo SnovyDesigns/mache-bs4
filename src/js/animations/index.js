@@ -2,32 +2,48 @@ import gsap from 'gsap';
 import './navbar/navbarAnimations';
 import headerTL from './top/topAnimations';
 import { aboutClean, aboutScene } from './about/aboutAnimations';
-import servicesTL from './services/servicesAnimations';
-import pricesTL from './prices/pricesAnimations';
-import featuresTL from './features/featuresAnimations';
-import communityTL from './community/communityAnimations';
-import articlesTL from './articles/articlesAnimations';
+import { servicesClean, servicesScene } from './services/servicesAnimations';
+import { pricesClean, pricesScene } from './prices/pricesAnimations';
+import featuresScene from './features/featuresAnimations';
+import {
+  communityClean,
+  communityScene
+} from './community/communityAnimations';
+import { articlesClean, articlesScene } from './articles/articlesAnimations';
+import { blogClean, blogScene } from './blog/blogAnimations';
+import { contactClean, contactScene } from './contact/contactAnimations';
 
 // ------------------------------------------
 
 // Clean sections before running scenes
 const sectionsClean = () => {
-  const tl = gsap.timeline();
+  aboutClean();
+  servicesClean();
+  pricesClean();
+  communityClean();
+  articlesClean();
+  blogClean();
+  contactClean();
+};
 
-  tl.add(aboutClean());
+// ------------------------------------------
 
-  return tl;
+// Add all scenes
+const sectionScenes = () => {
+  aboutScene();
+  servicesScene();
+  pricesScene();
+  featuresScene();
+  communityScene();
+  articlesScene();
+  blogScene();
+  contactScene();
 };
 
 // ------------------------------------------
 
 window.onload = () => {
-  sectionsClean();
   headerTL();
-  aboutScene();
-  // servicesTL();
-  // pricesTL();
-  // featuresTL();
-  // communityTL();
-  // articlesTL();
+  sectionsClean();
+  sectionScenes();
 };

@@ -1,6 +1,8 @@
 import gsap from 'gsap';
 import CSSRulePlugin from 'gsap/CSSRulePlugin';
-import toUp from '../helpers/toUpAlt';
+import ScrollMagic from 'scrollmagic';
+import toUp from '../helpers/toUp';
+import setDown from '../helpers/setDown';
 
 // ----------------------------------------------
 
@@ -9,7 +11,9 @@ gsap.registerPlugin(CSSRulePlugin);
 
 // ----------------------------------------------
 
-const servicesHeading = document.querySelector('.services__heading'),
+const controller = new ScrollMagic.Controller(),
+  servicesSection = document.querySelector('.services'),
+  servicesHeading = document.querySelector('.services__heading'),
   servicesHeadingAfter = CSSRulePlugin.getRule('.services__heading::after'),
   servicesParagraph = document.querySelector('.services__paragraph'),
   servicesIcons = document.querySelectorAll('.services__icon'),
@@ -18,6 +22,21 @@ const servicesHeading = document.querySelector('.services__heading'),
   svgServicesIcon2 = document.querySelector('.services__icon-2'),
   svgServicesIcon3 = document.querySelector('.services__icon-3'),
   svgServicesIcon4 = document.querySelector('.services__icon-4');
+
+// ------------------------------------------
+
+// Clean elements before animation
+const servicesClean = () => {
+  setDown(
+    servicesHeadingAfter,
+    servicesHeading,
+    servicesParagraph,
+    servicesIcons,
+    servicesSubheadings
+  );
+};
+
+// ------------------------------------------
 
 let servicesIconsTL = gsap.timeline({ paused: true, repeat: -1 });
 
@@ -65,4 +84,20 @@ const servicesTL = () => {
 
 // ------------------------------------------
 
-export default servicesTL;
+const servicesScene = () => {
+  const scene = new ScrollMagic.Scene({
+    triggerElement: servicesSection,
+    triggerHook: 0.45,
+    reverse: false
+  })
+    .on('enter', () => {
+      servicesTL();
+    })
+    .addTo(controller);
+
+  return scene;
+};
+
+// ------------------------------------------
+
+export { servicesClean, servicesScene };
